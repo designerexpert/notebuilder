@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <img className='mainLogo' src='./img/MedNoteCompanionLogo.png' />
+        <img className='mainLogo' src='./img/MedNoteCompanion.svg' alt='MedNoteCompanion Logo' />
         <Auth />
       </div>
     );

@@ -10,7 +10,7 @@ class Button extends Component {
     }
     componentWillMount() {
         // width: (`${this.props.title.length - 2}em`) Styles button to have a width based on the text in it.
-        this.setState({ onClick: this.props.onClick, title: this.props.title, width: (`${this.props.title.length - 2}em`) });
+        this.setState({ onClick: this.props.onClick, title: this.props.title, width: (`${this.props.title.length - 2.5}em`) });
     }
 
     handleClicked = () => {

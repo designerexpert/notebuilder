@@ -24,6 +24,16 @@ const changePassword = (req, res, next) => {
     });
 }
 
+const checkEmail = (req, res, next) => {
+    const email = req.body.email;
+    let regVar = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (regVar.test(email)) {
+        next();
+    } else {
+        res.json({ errorMessage: 'email pattern incorrect' })
+    }
+}
+
 const authenticate = (req, res, next) => {
     const { email } = req.body;
     let pw = req.body.password;
@@ -76,4 +86,5 @@ module.exports = {
     authenticate,
     validateToken,
     changePassword,
+    checkEmail,
 }
